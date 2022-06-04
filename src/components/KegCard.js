@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import placeholder from "../images/placeholder.png";
 
 const KegCard = (props) => {
   const { id, name, style, brewery, description, price, abv, ibu, volume } =
@@ -23,7 +24,7 @@ const KegCard = (props) => {
       <article className="media">
         <div className="media-left">
           <figure className="image is-128x128 is-a-little-rounded">
-            <img src="holymtn.png" alt="Image" />
+            <img src={placeholder} alt="" />
           </figure>
         </div>
         <div className="media-content">
@@ -59,7 +60,7 @@ const KegCard = (props) => {
             </div>
             <p></p>
             <div className="row">
-              <p>Price: ${price}</p>
+              <p>Price: ${price} / pint</p>
             </div>
             <div className="row">
               <p>{description}</p>
