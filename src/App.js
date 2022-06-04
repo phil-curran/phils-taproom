@@ -3,42 +3,19 @@ import "./App.css";
 import { useState } from "react";
 import About from "./components/About";
 import KegList from "./components/KegList";
-// import Inventory from "./data/Inventory";
-import Navbar from "./components/Navbar";
+import Inventory from "./data/Inventory";
+import Header from "./components/Header";
 import AddKeg from "./components/AddKeg";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import React, { Component } from "react";
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inventory: [],
-    };
-  }
-  render() {
-    return (
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            component={KegList}
-            inventory={this.state.inventory}
-          />
-          <Route
-            exact
-            path="/addkeg"
-            component={AddKeg}
-            inventory={this.state.inventory}
-          />
-          <Route exact path="/about" component={About} />
-        </Switch>
-      </Router>
-    );
-  }
+function App() {
+  const [inventory, setInventory] = useState();
+  return (
+    <div className="App">
+      <Header />
+      <KegList inventory={Inventory} />
+      <AddKeg inventory={Inventory} setInventory={setInventory} />
+    </div>
+  );
 }
 
 export default App;

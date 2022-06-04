@@ -8,7 +8,7 @@ const Header = () => {
       >
         <div className="container">
           <div className="navbar-brand">
-            <a className="navbar-item" href="/">
+            <a className="navbar-item" href="https://bulma.io">
               <img
                 src="https://bulma.io/images/bulma-logo.png"
                 width="112"
@@ -19,14 +19,11 @@ const Header = () => {
           </div>
           <div className="navbar-menu">
             <div className="navbar-start">
-              <a className="navbar-item" href="/">
-                On Tap
-              </a>
-              <a className="navbar-item" href="/addkeg">
-                Add Keg
-              </a>
               <a className="navbar-item" href="/about">
                 About Us
+              </a>
+              <a className="navbar-item" href="/keglist">
+                On Tap
               </a>
             </div>
             <div className="navbar-end">

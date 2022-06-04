@@ -26,10 +26,7 @@ const KegList = (props) => {
           <div className="container">
             <div className="column">
               {pageContent}
-              <button
-                className="button is-link is-outlined is-fullwidth"
-                href="/addkeg"
-              >
+              <button className="button is-link is-outlined is-fullwidth">
                 Add Item
               </button>
             </div>
