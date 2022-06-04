@@ -8,34 +8,37 @@ import Navbar from "./components/Navbar";
 import AddKeg from "./components/AddKeg";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
-  const [inventory, setInventory] = useState([]);
-  return (
-    <Router>
-      <div className="App">
+import React, { Component } from "react";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inventory: [],
+    };
+  }
+  render() {
+    return (
+      <Router>
         <Navbar />
         <Switch>
-          {/* <Route exact path="/" component={KegList} /> */}
-          {/* should have a default "/" route here */}
           <Route
             exact
-            path="/keglist"
+            path="/"
             component={KegList}
-            inventory={inventory}
-            setInventory={setInventory}
+            inventory={this.state.inventory}
           />
           <Route
             exact
             path="/addkeg"
             component={AddKeg}
-            inventory={inventory}
-            setInventory={setInventory}
+            inventory={this.state.inventory}
           />
           <Route exact path="/about" component={About} />
         </Switch>
-      </div>
-    </Router>
-  );
+      </Router>
+    );
+  }
 }
 
 export default App;
