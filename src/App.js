@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <About />
       <KegList inventory={Inventory} />
       <AddKeg inventory={Inventory} setInventory={setInventory} />
     </div>
