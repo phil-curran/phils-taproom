@@ -17,25 +17,23 @@ const KegList = (props) => {
       }));
 
   return (
-    <div className="contentArea">
-      <section className="section">
-        <div className="container">
-          <div className="panel is-info">
-            <p className="panel-heading has-text-centered">
-              <strong>Keg List</strong>
-            </p>
-            <div className="container">
-              <div className="column">
-                {pageContent}
-                <button className="button is-link is-outlined is-fullwidth">
-                  Add Item
-                </button>
-              </div>
+    <section className="section">
+      <div className="container">
+        <div className="panel is-info">
+          <p className="panel-heading has-text-centered">
+            <strong>Keg List</strong>
+          </p>
+          <div className="container">
+            <div className="column">
+              {pageContent}
+              <button className="button is-link is-outlined is-fullwidth">
+                Add Item
+              </button>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

@@ -19,6 +19,7 @@ const AddKeg = (props) => {
       price: e.target.price.value,
       abv: e.target.abv.value,
       ibu: e.target.ibu.value,
+      volume: 124,
     };
     setInventory(inventory.push(newEntry));
   };
@@ -78,6 +79,7 @@ const AddKeg = (props) => {
                     <div className="control">
                       <textarea
                         className="textarea"
+                        type="text"
                         name="description"
                         placeholder="Description"
                       />
@@ -129,7 +131,7 @@ const AddKeg = (props) => {
                         <div className="control">
                           <input
                             className="input"
-                            type="number"
+                            type="text"
                             name="price"
                             placeholder="$"
                           />
@@ -142,7 +144,7 @@ const AddKeg = (props) => {
                         <div className="control">
                           <input
                             className="input"
-                            type="number"
+                            type="text"
                             name="abv"
                             placeholder="%"
                           />
@@ -155,7 +157,7 @@ const AddKeg = (props) => {
                         <div className="control">
                           <input
                             className="input"
-                            type="number"
+                            type="text"
                             name="ibu"
                             placeholder="#"
                           />

@@ -1,0 +1,9 @@
+.panel {
+  width: 720px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.contentArea {
+  margin: 0 auto;
+}

@@ -1,17 +1,88 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 const KegCard = (props) => {
-  const { id, name, style, brewery, description, price, abv, ibu } = props;
+  const { id, name, style, brewery, description, price, abv, ibu, volume } =
+    props;
+
+  const [kegLevel, setKegLevel] = useState(volume);
+
+  const handleDetailsBtn = () => {
+    console.log("clicked details button");
+  };
+
+  const handleSalesBtn = () => {
+    setKegLevel(kegLevel - 5);
+  };
+
   return (
-    <div className="box" id={id}>
-      <p>{id}</p>
-      <p>{name}</p>
-      <p>{style}</p>
-      <p>{brewery}</p>
-      <p>{description}</p>
-      <p>{price}</p>
-      <p>{abv}</p>
-      <p>{ibu}</p>
+    <div className="box">
+      <progress className="progress is-primary" value={kegLevel} max="124">
+        {volume}
+      </progress>
+      <article className="media">
+        <div className="media-left">
+          <figure className="image is-128x128 is-a-little-rounded">
+            <img src="holymtn.png" alt="Image" />
+          </figure>
+        </div>
+        <div className="media-content">
+          <div className="content">
+            <div className="row">
+              <div className="columns">
+                <div className="column is-three-fifths">
+                  <p>
+                    <strong>
+                      {name} - {style}
+                    </strong>
+                    <br />
+                    <small>{brewery}</small>
+                  </p>
+                </div>
+                <div className="is-two-fifths">
+                  <div className="field is-grouped is-grouped-multiline">
+                    <div className="control">
+                      <div className="tags has-addons">
+                        <span className="tag is-dark">ABV:</span>
+                        <span className="tag is-info">{abv}%</span>
+                      </div>
+                    </div>
+                    <div className="control">
+                      <div className="tags has-addons">
+                        <span className="tag is-dark">IBUs:</span>
+                        <span className="tag is-success">{ibu}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <p>{description}</p>
+            </div>
+            <div className="row">
+              <div className="field is-grouped">
+                <p className="control">
+                  <button
+                    className="button is-small is-link"
+                    onClick={handleDetailsBtn}
+                  >
+                    Details
+                  </button>
+                </p>
+                <p className="control">
+                  <button
+                    className="button is-small is-danger"
+                    onClick={handleSalesBtn}
+                  >
+                    Sale
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
   );
 };
@@ -21,9 +92,9 @@ KegCard.propTypes = {
   style: PropTypes.string.isRequired,
   brewery: PropTypes.string.isRequired,
   description: PropTypes.string,
-  price: PropTypes.number.isRequired,
-  abv: PropTypes.number,
-  ibu: PropTypes.number,
+  price: PropTypes.string.isRequired,
+  abv: PropTypes.string,
+  ibu: PropTypes.string,
 };
 
 export default KegCard;
