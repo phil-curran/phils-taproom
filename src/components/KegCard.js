@@ -35,12 +35,12 @@ const KegCard = (props) => {
                     <strong>
                       {name} - {style}
                     </strong>
-                    <br />
+                    <br></br>
                     <small>{brewery}</small>
                   </p>
                 </div>
                 <div className="is-two-fifths">
-                  <div className="field is-grouped is-grouped-multiline">
+                  <div className="field is-grouped is-grouped-multiline AbvIbu">
                     <div className="control">
                       <div className="tags has-addons">
                         <span className="tag is-dark">ABV:</span>
@@ -57,9 +57,14 @@ const KegCard = (props) => {
                 </div>
               </div>
             </div>
+            <p></p>
+            <div className="row">
+              <p>Price: ${price}</p>
+            </div>
             <div className="row">
               <p>{description}</p>
             </div>
+            <p></p>
             <div className="row">
               <div className="field is-grouped">
                 <p className="control">
