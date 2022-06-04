@@ -1,27 +1,19 @@
-import { Link } from "react-router-dom";
-import "../node_modules/bulma/css/bulma.min.css";
+import "../node_modules/bulma/css/bulma.css";
 import "./App.css";
-import About from "./Components/About";
-import AddKeg from "./Components/AddKeg";
-import EditKeg from "./Components/EditKeg";
-import KegDetail from "./Components/KegDetail";
-import KegList from "./Components/KegList";
-import Inventory from "./inventory";
+import { useState } from "react";
+import About from "./components/About";
+import KegList from "./components/KegList";
+import Inventory from "./data/Inventory";
+import Header from "./components/Header";
+import AddKeg from "./components/AddKeg";
 
 function App() {
+  const [inventory, setInventory] = useState();
   return (
     <div className="App">
-      <p>Hello World!</p>
-      <hr></hr>
-      <About />
-      <hr></hr>
-      <AddKeg />
-      <hr></hr>
-      <EditKeg />
-      <hr></hr>
-      <KegDetail />
-      <hr></hr>
-      <KegList Inventory={Inventory} />
+      <Header />
+      <KegList inventory={Inventory} />
+      <AddKeg inventory={Inventory} setInventory={setInventory} />
     </div>
   );
 }
