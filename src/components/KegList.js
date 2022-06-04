@@ -1,39 +1,21 @@
-import KegCard from "./KegCard";
+// import KegCard from "./KegCard";
 
-const KegList = (props) => {
-  const { inventory } = props;
-
-  let pageContent;
-
-  inventory.length === 0
-    ? (pageContent = (
-        <div className="column">
-          <p className="has-text-centered">No Kegs in Inventory!</p>
-          <p className="has-text-centered">ADD SOME</p>
-        </div>
-      ))
-    : (pageContent = inventory.map((item, index) => {
-        return <KegCard key={index} {...item} />;
-      }));
+const KegList = (kegs) => {
+  // name: "Strawberry Gose",
+  //   style: "Geuze",
+  //   brewery: "Ravenna Brewing Co.",
+  //   description: "Lorem ipsum dolor si amet blah blah blah...",
+  //   price: 5,
+  //   abv: 7.5,
+  //   ibu: 75,
+  // },
 
   return (
-    <section className="section">
-      <div className="container">
-        <div className="panel is-info">
-          <p className="panel-heading has-text-centered">
-            <strong>Keg List</strong>
-          </p>
-          <div className="container">
-            <div className="column">
-              {pageContent}
-              <button className="button is-link is-outlined is-fullwidth">
-                Add Item
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      {kegs.map((keg) => {
+        <p>{keg.name}</p>;
+      })}
+    </>
   );
 };
 
