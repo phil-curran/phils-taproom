@@ -1,21 +1,36 @@
 import "../node_modules/bulma/css/bulma.css";
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from "react";
 import { useState } from "react";
-import About from "./components/About";
+import Navbar from "./components/Navbar";
 import KegList from "./components/KegList";
-import Inventory from "./data/Inventory";
-import Header from "./components/Header";
 import AddKeg from "./components/AddKeg";
+import KegDetail from "./components/KegDetail";
 
-function App() {
-  const [inventory, setInventory] = useState();
+const App = () => {
+  const [kegList, setKegList] = useState();
+  const [selectedKeg, setSelectedKeg] = useState(null);
+  const testProp = [{ title: "Phil", age: 43 }];
+
   return (
-    <div className="App">
-      <Header />
-      <KegList inventory={Inventory} />
-      <AddKeg inventory={Inventory} setInventory={setInventory} />
-    </div>
+    <Router>
+      <Navbar />
+      <div className="content">
+        <Switch>
+          <Route exact path="/" component={KegList} />
+          <Route
+            exact
+            path="/keglist"
+            component={KegList}
+            testProp={testProp}
+          />
+          <Route exact path="/addkeg" component={AddKeg} />
+          <Route exact path="/kegdetail" component={KegDetail} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
