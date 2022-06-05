@@ -19,11 +19,11 @@ const Header = () => {
           </div>
           <div className="navbar-menu">
             <div className="navbar-start">
-              <a className="navbar-item" href="/about">
-                About Us
-              </a>
               <a className="navbar-item" href="/keglist">
                 On Tap
+              </a>
+              <a className="navbar-item" href="/addkeg">
+                Add Keg
               </a>
             </div>
             <div className="navbar-end">

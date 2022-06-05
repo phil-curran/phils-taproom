@@ -1,7 +1,6 @@
 import "../node_modules/bulma/css/bulma.css";
 import "./App.css";
 import { useState } from "react";
-import About from "./components/About";
 import KegList from "./components/KegList";
 import Inventory from "./data/Inventory";
 import Header from "./components/Header";
