@@ -25,7 +25,7 @@ const KegCard = (props) => {
   };
 
   const handleSalesBtn = () => {
-    setKegLevel(kegLevel - 20);
+    setKegLevel(kegLevel - 2);
   };
 
   let progressBarColor;
