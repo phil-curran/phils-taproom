@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# <p align="center"> 🍻 Phil's Taproom 🍻 </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### A web-based React application for managing inventory.
 
-## Available Scripts
+#### by **Phil Curran** ~ June 5, 2022
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+1. [Technologies Used](#technologies)
+2. [Description](#description)
+3. [Component Map](#componentMap)
+4. [Setup/Installation Requirements](#setup)
+5. [Known Bugs](#bugs)
+6. [License](#license)
+7. [Contact Information](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used <a id="technologies"></a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- HTML
+- CSS / Bulma
+- React
+- NPM & Webpack
 
-### `npm test`
+## Description <a id="description"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This app allows you to track the inventory of a taproom by adding, deleting, and monitoring the level of the kegs in the system.  Responsive messaging tells you whether the keg is full or getting close to being empty with conditional rendering.
 
-### `npm run build`
+## Component Map <a id="componentMap"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](Taproom-ComponentMap.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Setup/Installation Instructions <a id="setup"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Clone the project
 
-### `npm run eject`
+- Open the terminal on your local computer.
+- Navigate to the parent directory of your preference.
+- Clone this project: <code>git clone https://github.com/phil-curran/phils-taproom.git</code>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Install Dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- From the root directory, run: <code>npm install</code>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Run the project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- From the root directory, run: <code>npm start</code>
 
-## Learn More
+## Known Bugs <a id="bugs"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- deleteKeg and kegDetails functions not currently working / in progress.
+- Future iterations may use ReactRouter to navigate between pages / page elements.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License <a id="license"></a>
 
-### Code Splitting
+[MIT License](https://opensource.org/licenses/MIT) © 2022
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contact <a id="contact"></a>
 
-### Analyzing the Bundle Size
+Phil Curran [pecurran@hotmail.com](mailto:pecurran@hotmail.com) [LinkedIn](https://www.linkedin.com/in/philcurran/) [GitHub](https://github.com/phil-curran) <br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
