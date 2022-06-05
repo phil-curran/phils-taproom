@@ -26,15 +26,6 @@ const Header = () => {
                 Add Keg
               </a>
             </div>
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <div className="buttons">
-                  <a className="button is-outlined is-small" href="/">
-                    Admin Login
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </nav>

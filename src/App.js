@@ -7,12 +7,24 @@ import Header from "./components/Header";
 import AddKeg from "./components/AddKeg";
 
 function App() {
-  const [inventory, setInventory] = useState();
+  const data = [];
+  const [inventory, setInventory] = useState(data);
+
+  console.log(inventory);
+
+  const addKeg = (newKeg) => {
+    setInventory([...inventory, newKeg]);
+  };
+
   return (
     <div className="App">
       <Header />
-      <KegList inventory={Inventory} />
-      <AddKeg inventory={Inventory} setInventory={setInventory} />
+      <KegList inventory={Inventory} setInventory={setInventory} />
+      <AddKeg
+        inventory={Inventory}
+        setInventory={setInventory}
+        addKeg={addKeg}
+      />
     </div>
   );
 }

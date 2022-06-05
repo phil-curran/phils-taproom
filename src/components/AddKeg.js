@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 const AddKeg = (props) => {
   const { inventory, setInventory } = props;
 
+  console.log(inventory);
+
   const handleCancelBtn = (e) => {
     e.preventDefault();
     console.log("clicked cancel btn");
@@ -10,7 +12,7 @@ const AddKeg = (props) => {
 
   const handleSubmitBtn = (e) => {
     e.preventDefault();
-    const newEntry = {
+    const newKeg = {
       id: uuidv4(),
       name: e.target.name.value,
       style: e.target.style.value,
@@ -21,7 +23,7 @@ const AddKeg = (props) => {
       ibu: e.target.ibu.value,
       volume: 124,
     };
-    setInventory(inventory.push(newEntry));
+    setInventory(inventory.push(newKeg));
   };
 
   return (

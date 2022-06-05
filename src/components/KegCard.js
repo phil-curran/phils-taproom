@@ -3,21 +3,37 @@ import PropTypes from "prop-types";
 import placeholder from "../images/placeholder.png";
 
 const KegCard = (props) => {
-  const { id, name, style, brewery, description, price, abv, ibu, volume } =
-    props;
+  const {
+    id,
+    name,
+    style,
+    brewery,
+    description,
+    price,
+    abv,
+    ibu,
+    volume,
+    inventory,
+    setInventory,
+  } = props;
 
   const [kegLevel, setKegLevel] = useState(volume);
+
+  function deleteKeg(id) {
+    const remainingKegs = inventory.filter((keg) => id !== keg.id);
+    setInventory(remainingKegs);
+  }
 
   const handleDetailsBtn = () => {
     console.log("clicked details button");
   };
 
   const handleSalesBtn = () => {
-    setKegLevel(kegLevel - 5);
+    setKegLevel(kegLevel - 2);
   };
 
   return (
-    <div className="box">
+    <div className="box" key={id}>
       <progress className="progress is-primary" value={kegLevel} max="124">
         {volume}
       </progress>
@@ -70,7 +86,15 @@ const KegCard = (props) => {
               <div className="field is-grouped">
                 <p className="control">
                   <button
-                    className="button is-small is-link"
+                    className="button is-danger is-outlined"
+                    onClick={deleteKeg}
+                  >
+                    Delete
+                  </button>
+                </p>
+                <p className="control">
+                  <button
+                    className="button is-info is-outlined"
                     onClick={handleDetailsBtn}
                   >
                     Details
@@ -78,7 +102,7 @@ const KegCard = (props) => {
                 </p>
                 <p className="control">
                   <button
-                    className="button is-small is-danger"
+                    className="button is-success is-outlined"
                     onClick={handleSalesBtn}
                   >
                     Sale

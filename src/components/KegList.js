@@ -1,7 +1,7 @@
 import KegCard from "./KegCard";
 
 const KegList = (props) => {
-  const { inventory } = props;
+  const { inventory, setInventory, deleteKeg } = props;
 
   let pageContent;
 
@@ -13,7 +13,14 @@ const KegList = (props) => {
         </div>
       ))
     : (pageContent = inventory.map((item, index) => {
-        return <KegCard key={index} {...item} />;
+        return (
+          <KegCard
+            key={index}
+            {...item}
+            setInventory={setInventory}
+            deleteKeg={deleteKeg}
+          />
+        );
       }));
 
   return (
