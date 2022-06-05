@@ -3,8 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 const AddKeg = (props) => {
   const { inventory, setInventory } = props;
 
-  console.log(inventory);
-
   const handleCancelBtn = (e) => {
     e.preventDefault();
     console.log("clicked cancel btn");

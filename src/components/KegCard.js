@@ -13,30 +13,101 @@ const KegCard = (props) => {
     abv,
     ibu,
     volume,
-    inventory,
-    setInventory,
+    deleteKeg,
   } = props;
 
-  const [kegLevel, setKegLevel] = useState(volume);
+  console.log(deleteKeg);
 
-  function deleteKeg(id) {
-    const remainingKegs = inventory.filter((keg) => id !== keg.id);
-    setInventory(remainingKegs);
-  }
+  const [kegLevel, setKegLevel] = useState(volume);
 
   const handleDetailsBtn = () => {
     console.log("clicked details button");
   };
 
   const handleSalesBtn = () => {
-    setKegLevel(kegLevel - 2);
+    setKegLevel(kegLevel - 20);
   };
+
+  let progressBarColor;
+  let progressBarMessage;
+
+  if (kegLevel >= 62) {
+    progressBarColor = "progress  is-primary";
+    progressBarMessage = "Plenty Left!";
+  } else if (kegLevel >= 20) {
+    progressBarColor = "progress is-warning";
+    progressBarMessage = "Getting Low";
+  } else if (kegLevel > 0) {
+    progressBarColor = "progress is-danger";
+    progressBarMessage = "Almost Gone!";
+  } else if (kegLevel <= 0) {
+    progressBarMessage = "Is Kaput!";
+  }
+
+  let progressBar;
+
+  kegLevel > 0
+    ? (progressBar = (
+        <progress className={progressBarColor} value={kegLevel} max="124">
+          {volume}
+        </progress>
+      ))
+    : (progressBar = null);
+
+  let buttonBlock;
+
+  progressBar !== null
+    ? (buttonBlock = (
+        <div className="row">
+          <div className="field is-grouped">
+            <p className="control">
+              <button
+                className="button is-danger is-outlined"
+                onClick={deleteKeg}
+              >
+                Delete
+              </button>
+            </p>
+            <p className="control">
+              <button
+                className="button is-info is-outlined"
+                onClick={handleDetailsBtn}
+              >
+                Details
+              </button>
+            </p>
+            <p className="control">
+              <button
+                className="button is-success is-outlined"
+                onClick={handleSalesBtn}
+              >
+                Sale
+              </button>
+            </p>
+          </div>
+        </div>
+      ))
+    : (buttonBlock = (
+        <div className="row">
+          <div className="field is-grouped">
+            <p className="control">
+              <p className="emptyKeg">
+                <button
+                  className="button is-black is-outlined is-fullwidth emptyKeg"
+                  onClick={deleteKeg}
+                >
+                  Delete Empty Keg
+                </button>
+              </p>
+            </p>
+          </div>
+        </div>
+      ));
 
   return (
     <div className="box" key={id}>
-      <progress className="progress is-primary" value={kegLevel} max="124">
-        {volume}
-      </progress>
+      <p className="levelMessage">{progressBarMessage}</p>
+      {progressBar}
       <article className="media">
         <div className="media-left">
           <figure className="image is-128x128 is-a-little-rounded">
@@ -82,34 +153,7 @@ const KegCard = (props) => {
               <p>{description}</p>
             </div>
             <p></p>
-            <div className="row">
-              <div className="field is-grouped">
-                <p className="control">
-                  <button
-                    className="button is-danger is-outlined"
-                    onClick={deleteKeg}
-                  >
-                    Delete
-                  </button>
-                </p>
-                <p className="control">
-                  <button
-                    className="button is-info is-outlined"
-                    onClick={handleDetailsBtn}
-                  >
-                    Details
-                  </button>
-                </p>
-                <p className="control">
-                  <button
-                    className="button is-success is-outlined"
-                    onClick={handleSalesBtn}
-                  >
-                    Sale
-                  </button>
-                </p>
-              </div>
-            </div>
+            {buttonBlock}
           </div>
         </div>
       </article>
@@ -118,6 +162,7 @@ const KegCard = (props) => {
 };
 
 KegCard.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   style: PropTypes.string.isRequired,
   brewery: PropTypes.string.isRequired,

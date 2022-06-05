@@ -11,3 +11,20 @@
 .AbvIbu {
   margin-top: 15px;
 }
+
+.levelMessage {
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.box {
+  margin-top: 0px !important;
+  padding-top: 4px !important;
+}
+
+.emptyKeg {
+  margin: 0 auto !important;
+  text-align: center;
+  align-items: center !important;
+  justify-content: center !important;
+}

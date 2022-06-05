@@ -10,16 +10,24 @@ function App() {
   const data = [];
   const [inventory, setInventory] = useState(data);
 
-  console.log(inventory);
-
   const addKeg = (newKeg) => {
     setInventory([...inventory, newKeg]);
+  };
+
+  const deleteKeg = (id) => {
+    console.log("delete button clicked");
+    const remainingKegs = inventory.filter((keg) => id !== keg.id);
+    setInventory(remainingKegs);
   };
 
   return (
     <div className="App">
       <Header />
-      <KegList inventory={Inventory} setInventory={setInventory} />
+      <KegList
+        inventory={Inventory}
+        setInventory={setInventory}
+        deleteKeg={deleteKeg}
+      />
       <AddKeg
         inventory={Inventory}
         setInventory={setInventory}

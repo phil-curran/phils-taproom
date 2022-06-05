@@ -17,6 +17,7 @@ const KegList = (props) => {
           <KegCard
             key={index}
             {...item}
+            inventory={inventory}
             setInventory={setInventory}
             deleteKeg={deleteKeg}
           />
@@ -31,12 +32,7 @@ const KegList = (props) => {
             <strong>Keg List</strong>
           </p>
           <div className="container">
-            <div className="column">
-              {pageContent}
-              <button className="button is-link is-outlined is-fullwidth">
-                Add Item
-              </button>
-            </div>
+            <div className="column">{pageContent}</div>
           </div>
         </div>
       </div>
