@@ -1,20 +1,11 @@
-// import KegCard from "./KegCard";
+import KegCard from "./KegCard";
+import React from "react";
 
-const KegList = (kegs) => {
-  // name: "Strawberry Gose",
-  //   style: "Geuze",
-  //   brewery: "Ravenna Brewing Co.",
-  //   description: "Lorem ipsum dolor si amet blah blah blah...",
-  //   price: 5,
-  //   abv: 7.5,
-  //   ibu: 75,
-  // },
-
+const KegList = (props) => {
+  console.log(props.name);
   return (
     <>
-      {kegs.map((keg) => {
-        <p>{keg.name}</p>;
-      })}
+      <p>{props.name}</p>
     </>
   );
 };
